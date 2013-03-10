@@ -5,9 +5,25 @@
 {% block title %}{% trans "Post archive" %}{% endblock %}
 {% block body_class %}{{ block.super }} post_list{% endblock %}
 
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css">
+{% endblock %}
 
 {% block content_title %}
-  <h2>{% trans "List of all posts" %}</h2>
+  <!-- <h2>{% trans "List of all posts" %}</h2> -->
+{% endblock %}
+
+{% block scripts %}
+<script src="{{STATIC_URL}}js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(".item").click(function() {
+    console.log("Click");
+    window.location = $(this).find("a").attr("href"); 
+    return false;
+  });
+});
+</script>
 {% endblock %}
 
 
@@ -15,9 +31,11 @@
   <div class="list post_list">
     {% for post in object_list %}
     <div class="item">
-      <h3 class="title">{{ forloop.counter }}.<a href="{{ post.get_absolute_url }}" title="{% trans "View this post" %}">{{ post.title }}</a></h3>
+      <a href="{{ post.get_absolute_url }}" title="{% trans "View this post" %}" class="invisible"></a>
+      <h3 class="title">{{ post.title }}</h3>
       <p class="date">{{ post.publish|date:"Y F d h:i a" }}</p>
       <p class="tease">{{ post.tease|safe }}</p>
+      <p class="postdetail"> {{ post.body|safe }}</p>
     </div>
     {% endfor %}
   </div>

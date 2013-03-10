@@ -1,0 +1,34 @@
+body {
+	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 25px;
+	color: white;
+	/*text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);*/
+  	margin:auto;
+  	padding:0;
+  	width:960px;
+}
+.cB {
+	clear:both;
+}
+
+#logo img{
+	/*height: 200px;*/
+}
+
+.item {
+	background-color: #C6C6FF;
+	width: 300px;
+	float: left;
+	margin-right: 10px;
+	color: black;
+	height: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.invisible {
+	display: none;
+}

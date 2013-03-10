@@ -1,4 +1,8 @@
 # Django settings for angryprofessionals project.
+import os
+
+PROJECT_APP_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.dirname(PROJECT_APP_DIR)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -67,6 +71,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR,'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -154,6 +159,8 @@ LOGGING = {
         },
     }
 }
+
+BLOG_PAGESIZE=10
 
 # Load the local settings
 # This should be at the end for overriding
