@@ -27,6 +27,7 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	cursor: pointer;
+	margin-top: 10px;
 }
 
 .invisible {
